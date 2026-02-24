@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kylan's Daily Opportunity Hub</title>
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0d0f14;
+      --surface:    #161b25;
+      --surface2:   #1e2535;
+      --surface3:   #252d40;
+      --border:     #2a3347;
+      --text:       #e2e8f0;
+      --muted:      #64748b;
+      --accent:     #6366f1;
+      --accent-glow:#6366f133;
+      --blue:       #3b82f6;
+      --green:      #10b981;
+      --orange:     #f59e0b;
+      --red:        #ef4444;
+      --purple:     #a855f7;
+      --cyan:       #06b6d4;
+      --pink:       #ec4899;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ─── Header ─── */
+    header {
+      background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-left h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #6366f1, #a78bfa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-left p {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    #last-updated {
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+    }
+
+    /* ─── Tab Nav ─── */
+    .tab-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1rem;
+      display: flex;
+      gap: 0.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tab-nav::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.85rem 1rem;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tab-btn:hover { color: var(--text); }
+
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .tab-btn .count {
+      background: var(--surface3);
+      border-radius: 99px;
+      font-size: 0.68rem;
+      padding: 0.1rem 0.45rem;
+      color: var(--muted);
+    }
+
+    .tab-btn.active .count {
+      background: var(--accent-glow);
+      color: var(--accent);
+    }
+
+    /* ─── Main Content ─── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ─── Section Header ─── */
+    .section-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+    }
+
+    /* ─── Cards Grid ─── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px #00000040;
+    }
+
+    .card-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+
+    .card-title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .card-title a:hover { color: var(--accent); }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-body {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .card-tip {
+      background: var(--surface2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      padding: 0.5rem 0.65rem;
+      font-size: 0.78rem;
+      color: #94a3b8;
+      margin-top: 0.65rem;
+    }
+
+    .card-tip strong { color: var(--accent); }
+
+    /* ─── Badges ─── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-blue     { background: #1e3a5f; color: var(--blue); }
+    .badge-green    { background: #052e16; color: var(--green); }
+    .badge-orange   { background: #422006; color: var(--orange); }
+    .badge-red      { background: #3b0a0a; color: var(--red); }
+    .badge-purple   { background: #2e1065; color: var(--purple); }
+    .badge-cyan     { background: #083344; color: var(--cyan); }
+    .badge-pink     { background: #500724; color: var(--pink); }
+    .badge-muted    { background: var(--surface3); color: var(--muted); }
+
+    /* ─── Jobs Table (wide viewport) ─── */
+    .jobs-filter {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.78rem;
+      padding: 0.35rem 0.75rem;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+    .filter-btn.active { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
+
+    /* ─── YouTube Cards ─── */
+    .yt-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .yt-card:hover {
+      border-color: var(--red);
+      transform: translateY(-2px);
+    }
+
+    .yt-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .yt-topic {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .trend-score {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--orange);
+    }
+
+    .video-row {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 0.7rem 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .video-row-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+
+    .video-row-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .video-row.main .video-row-label  { color: var(--red); }
+    .video-row.short .video-row-label { color: var(--orange); }
+    .video-row.followup .video-row-label { color: var(--purple); }
+
+    .record-approach {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ─── Trend dots ─── */
+    .trend-dots {
+      display: flex;
+      gap: 3px;
+    }
+
+    .trend-dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--surface3);
+    }
+
+    .trend-dots span.lit { background: var(--orange); }
+
+    /* ─── Upwork card skills ─── */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-tag {
+      background: var(--surface3);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+    }
+
+    /* ─── Empty state ─── */
+    .empty {
+      text-align: center;
+      color: var(--muted);
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* ─── Loading ─── */
+    #loading {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--muted);
+    }
+
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--surface3);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── Salary highlight ─── */
+    .salary {
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .platform-link {
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .platform-link:hover { text-decoration: underline; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 600px) {
+      header { padding: 1rem; }
+      .header-left h1 { font-size: 1rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .tab-btn { padding: 0.75rem 0.65rem; font-size: 0.77rem; }
+    }
+
+    /* ─── Scrollbar ─── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>⚡ Kylan's Daily Opportunity Hub</h1>
+    <p>Your daily feed of jobs, gigs, trends &amp; content ideas</p>
+  </div>
+  <div id="last-updated">Loading…</div>
+</header>
+
+<nav class="tab-nav" role="tablist">
+  <button class="tab-btn active" data-tab="jobs" role="tab">
+    💼 Jobs <span class="count" id="cnt-jobs">–</span>
+  </button>
+  <button class="tab-btn" data-tab="ebay" role="tab">
+    📦 eBay Trends <span class="count" id="cnt-ebay">–</span>
+  </button>
+  <button class="tab-btn" data-tab="fiverr" role="tab">
+    🎯 Fiverr Gigs <span class="count" id="cnt-fiverr">–</span>
+  </button>
+  <button class="tab-btn" data-tab="upwork" role="tab">
+    💻 Upwork <span class="count" id="cnt-upwork">–</span>
+  </button>
+  <button class="tab-btn" data-tab="youtube" role="tab">
+    🎬 YouTube Ideas <span class="count" id="cnt-youtube">–</span>
+  </button>
+</nav>
+
+<main>
+  <div id="loading">
+    <div class="spinner"></div>
+    Loading opportunity data…
+  </div>
+
+  <!-- ══════════ JOBS ══════════ -->
+  <div id="panel-jobs" class="tab-panel" role="tabpanel">
+    <div class="section-header">
+      <h2>💼 Job Opportunities</h2>
+      <p>Remote-first roles matching your skills — updated daily</p>
+    </div>
+
+    <div class="jobs-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="in-field">🔵 In-Field</button>
+      <button class="filter-btn" data-filter="accessible">🟢 Accessible</button>
+    </div>
+
+    <div class="cards-grid" id="jobs-grid"></div>
+  </div>
+
+  <!-- ══════════ EBAY ══════════ -->
+  <div id="panel-ebay" class="tab-panel" role="tabpanel">
+    <div class="section-header">
+      <h2>📦 eBay Trending Products</h2>
+      <p>Low-competition, easy-to-source products trending on eBay UK right now</p>
+    </div>
+    <div class="cards-grid" id="ebay-grid"></div>
+  </div>
+
+  <!-- ══════════ FIVERR ══════════ -->
+  <div id="panel-fiverr" class="tab-panel" role="tabpanel">
+    <div class="section-header">
+      <h2>🎯 Fiverr Gig Ideas</h2>
+      <p>Gigs you can launch today based on your current skills</p>
+    </div>
+    <div class="cards-grid" id="fiverr-grid"></div>
+  </div>
+
+  <!-- ══════════ UPWORK ══════════ -->
+  <div id="panel-upwork" class="tab-panel" role="tabpanel">
+    <div class="section-header">
+      <h2>💻 Upwork Opportunities</h2>
+      <p>Freelance contracts matching your skill set on Upwork</p>
+    </div>
+    <div class="cards-grid" id="upwork-grid"></div>
+  </div>
+
+  <!-- ══════════ YOUTUBE ══════════ -->
+  <div id="panel-youtube" class="tab-panel" role="tabpanel">
+    <div class="section-header">
+      <h2>🎬 YouTube Multi-Video Ideas</h2>
+      <p>One session = 2–3 videos for <strong>@prompttocide</strong> — trending AI &amp; tech topics</p>
+    </div>
+    <div class="cards-grid" id="youtube-grid" style="grid-template-columns: repeat(auto-fill, minmax(360px, 1fr))"></div>
+  </div>
+</main>
+
+<script>
+  // ── Tab switching ──────────────────────────────────────────────
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(`panel-${target}`).classList.add('active');
+    });
+  });
+
+  // ── Job filter ─────────────────────────────────────────────────
+  let allJobs = [];
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      const filtered = f === 'all' ? allJobs : allJobs.filter(j => j.type === f);
+      renderJobs(filtered);
+    });
+  });
+
+  // ── Helpers ────────────────────────────────────────────────────
+  function badge(text, color) {
+    return `<span class="badge badge-${color}">${text}</span>`;
+  }
+
+  function demandBadge(d) {
+    const map = { high: ['orange', '🔥 High Demand'], medium: ['cyan', '📈 Medium'], low: ['muted', '📉 Low'] };
+    const [c, t] = map[d] || ['muted', d];
+    return badge(t, c);
+  }
+
+  function competitionBadge(c) {
+    const map = { low: ['green', '✅ Low Competition'], medium: ['orange', '⚡ Medium Competition'], high: ['red', '🔴 High Competition'] };
+    const [cl, t] = map[c] || ['muted', c];
+    return badge(t, cl);
+  }
+
+  function trendDots(score) {
+    let dots = '';
+    for (let i = 1; i <= 10; i++) {
+      dots += `<span class="${i <= score ? 'lit' : ''}"></span>`;
+    }
+    return `<div class="trend-dots" title="Trend score: ${score}/10">${dots}</div>`;
+  }
+
+  function timeAgo(dateStr) {
+    const d = new Date(dateStr);
+    const now = new Date();
+    const diff = Math.floor((now - d) / 86400000);
+    if (diff === 0) return 'Today';
+    if (diff === 1) return 'Yesterday';
+    return `${diff} days ago`;
+  }
+
+  // ── Renderers ──────────────────────────────────────────────────
+  function renderJobs(jobs) {
+    const grid = document.getElementById('jobs-grid');
+    if (!jobs.length) { grid.innerHTML = '<div class="empty">No jobs matching this filter.</div>'; return; }
+
+    grid.innerHTML = jobs.map(j => {
+      const typeBadge = j.type === 'in-field'
+        ? badge('🔵 In-Field', 'blue')
+        : badge('🟢 Accessible', 'green');
+
+      return `
+        <div class="card">
+          <div class="card-title">
+            ${j.url ? `<a href="${j.url}" target="_blank" rel="noopener">${j.title}</a>` : j.title}
+          </div>
+          <div class="card-meta">
+            ${typeBadge}
+            ${badge(j.platform, 'muted')}
+            ${j.location.toLowerCase().includes('remote') ? badge('🏠 Remote', 'purple') : ''}
+          </div>
+          <div class="card-body">
+            <div>💰 <span class="salary">${j.estimated_salary}</span></div>
+            <div style="margin-top:0.3rem">📍 ${j.location}</div>
+            <div style="margin-top:0.3rem;color:var(--muted);font-size:0.72rem">${timeAgo(j.date_added)}</div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  function renderEbay(items) {
+    document.getElementById('ebay-grid').innerHTML = items.map(item => `
+      <div class="card">
+        <div class="card-title">${item.product}</div>
+        <div class="card-meta">
+          ${badge(item.category, 'cyan')}
+          ${competitionBadge(item.competition)}
+        </div>
+        <div class="card-body">
+          💰 Avg sale: <span class="salary">${item.avg_sale_price}</span>
+        </div>
+        <div class="card-tip"><strong>💡 Tip:</strong> ${item.tip}</div>
+        <div style="margin-top:0.5rem;font-size:0.72rem;color:var(--muted)">${timeAgo(item.date_added)}</div>
+      </div>
+    `).join('');
+  }
+
+  function renderFiverr(gigs) {
+    document.getElementById('fiverr-grid').innerHTML = gigs.map(gig => `
+      <div class="card">
+        <div class="card-title">${gig.gig_title}</div>
+        <div class="card-meta">
+          ${badge(gig.category, 'purple')}
+          ${demandBadge(gig.demand)}
+        </div>
+        <div class="card-body">
+          <div>💰 Starting at <span class="salary">${gig.starting_price}</span></div>
+          <div style="margin-top:0.3rem">⏱ ${gig.time_to_complete}</div>
+        </div>
+        <div class="card-tip"><strong>💡 Tip:</strong> ${gig.tip}</div>
+      </div>
+    `).join('');
+  }
+
+  function renderUpwork(jobs) {
+    document.getElementById('upwork-grid').innerHTML = jobs.map(job => `
+      <div class="card">
+        <div class="card-title">${job.title}</div>
+        <div class="card-meta">
+          ${demandBadge(job.demand)}
+          ${badge('Upwork', 'green')}
+        </div>
+        <div class="card-body">
+          <div>💰 <span class="salary">${job.budget_range}</span></div>
+        </div>
+        <div class="skills-list">
+          ${job.skills_needed.map(s => `<span class="skill-tag">${s}</span>`).join('')}
+        </div>
+        <div class="card-tip"><strong>💡 Tip:</strong> ${job.tip}</div>
+      </div>
+    `).join('');
+  }
+
+  function renderYoutube(ideas) {
+    document.getElementById('youtube-grid').innerHTML = ideas.map(idea => `
+      <div class="yt-card">
+        <div class="yt-card-header">
+          <div>
+            <div class="yt-topic">${idea.session_topic}</div>
+          </div>
+          <div class="trend-score">
+            ${trendDots(idea.trend_score)}
+            <span>${idea.trend_score}/10</span>
+          </div>
+        </div>
+
+        <div class="video-row main">
+          <div class="video-row-label">▶ Main Video</div>
+          <div class="video-row-title">${idea.main_video_title}</div>
+        </div>
+        <div class="video-row short">
+          <div class="video-row-label">⚡ Short</div>
+          <div class="video-row-title">${idea.short_title}</div>
+        </div>
+        <div class="video-row followup">
+          <div class="video-row-label">🔁 Follow-up</div>
+          <div class="video-row-title">${idea.follow_up_title}</div>
+        </div>
+
+        <div class="record-approach">
+          🎥 <strong>How to record:</strong> ${idea.record_approach}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ── Load data ──────────────────────────────────────────────────
+  async function loadData() {
+    try {
+      const resp = await fetch('data/opportunities.json');
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const data = await resp.json();
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('panel-jobs').classList.add('active');
+
+      // Counts
+      document.getElementById('cnt-jobs').textContent    = data.jobs?.length ?? 0;
+      document.getElementById('cnt-ebay').textContent    = data.ebay_trending?.length ?? 0;
+      document.getElementById('cnt-fiverr').textContent  = data.fiverr_gigs?.length ?? 0;
+      document.getElementById('cnt-upwork').textContent  = data.upwork_opportunities?.length ?? 0;
+      document.getElementById('cnt-youtube').textContent = data.youtube_ideas?.length ?? 0;
+
+      // Timestamp
+      const ts = data.last_updated ? new Date(data.last_updated) : new Date();
+      document.getElementById('last-updated').textContent =
+        '🕒 Updated: ' + ts.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+      // Render
+      allJobs = data.jobs || [];
+      renderJobs(allJobs);
+      renderEbay(data.ebay_trending || []);
+      renderFiverr(data.fiverr_gigs || []);
+      renderUpwork(data.upwork_opportunities || []);
+      renderYoutube(data.youtube_ideas || []);
+
+    } catch (err) {
+      document.getElementById('loading').innerHTML =
+        `<div style="color:var(--red)">⚠️ Could not load data: ${err.message}<br><small>Make sure to serve this via a local server (e.g. <code>npx serve .</code>)</small></div>`;
+    }
+  }
+
+  loadData();
+</script>
+</body>
+</html>
