@@ -1,240 +1,272 @@
 {
-  "last_updated": "2026-02-24T19:38:00Z",
+  "last_updated": "2026-02-24T22:00:00Z",
+  "version": "2",
   "jobs": [
     {
-      "title": "WordPress Site Administrator",
+      "title": "WordPress Website Manager (Remote)",
       "type": "in-field",
-      "platform": "LinkedIn",
-      "estimated_salary": "£28,000–£35,000/yr",
+      "platform": "Indeed UK",
+      "estimated_salary": "£25,000–£32,000/yr",
       "location": "Remote (UK)",
-      "date_added": "2026-02-24",
-      "url": "https://www.linkedin.com/jobs/wordpress-administrator/"
+      "match": "Strong — WordPress daily + content updates",
+      "url": "https://uk.indeed.com/jobs?q=wordpress+manager&l=Remote&fromage=14",
+      "date_added": "2026-02-24"
     },
     {
-      "title": "eBay & Marketplace Account Manager",
+      "title": "eBay / Marketplace Account Manager",
       "type": "in-field",
-      "platform": "Indeed",
+      "platform": "Indeed UK",
       "estimated_salary": "£24,000–£30,000/yr",
-      "location": "Remote (UK)",
-      "date_added": "2026-02-24",
-      "url": "https://uk.indeed.com/jobs?q=ebay+account+manager"
+      "location": "Remote / Hybrid UK",
+      "match": "Perfect — 10+ years eBay experience",
+      "url": "https://uk.indeed.com/jobs?q=ebay+account+manager&l=Remote",
+      "date_added": "2026-02-24"
     },
     {
-      "title": "Technical Support Specialist (1st Line)",
+      "title": "E-Commerce Store Manager (Shopify / WooCommerce)",
       "type": "in-field",
-      "platform": "Remote.co",
-      "estimated_salary": "£22,000–£28,000/yr",
+      "platform": "Remote Rocketship",
+      "estimated_salary": "£22,000–£35,000/yr",
       "location": "Remote (UK)",
-      "date_added": "2026-02-24",
-      "url": "https://remote.co/remote-jobs/tech-support/"
+      "match": "Strong — WooCommerce + listings experience",
+      "url": "https://www.remoterocketship.com/jobs/entry-level-ecommerce/",
+      "date_added": "2026-02-24"
     },
     {
-      "title": "Customer Service Advisor – Tech/Retail",
+      "title": "Remote WordPress Support Specialist",
       "type": "in-field",
-      "platform": "Indeed",
+      "platform": "Arc.dev",
+      "estimated_salary": "£18–£28/hr",
+      "location": "Remote (Worldwide)",
+      "match": "Good — WordPress fixes, troubleshooting",
+      "url": "https://arc.dev/remote-jobs/wordpress",
+      "date_added": "2026-02-24"
+    },
+    {
+      "title": "IT / Tech Support 1st Line (Remote)",
+      "type": "accessible",
+      "platform": "LinkedIn UK",
       "estimated_salary": "£20,000–£26,000/yr",
       "location": "Remote (UK)",
-      "date_added": "2026-02-24",
-      "url": "https://uk.indeed.com/jobs?q=remote+customer+service+tech"
+      "match": "Good — computer repair + technical background",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=tech+support+remote&location=United+Kingdom",
+      "date_added": "2026-02-24"
     },
     {
-      "title": "Virtual Assistant (General/Tech-Savvy)",
-      "type": "accessible",
-      "platform": "Remote.co",
-      "estimated_salary": "£18,000–£25,000/yr",
-      "location": "Remote (UK)",
-      "date_added": "2026-02-24",
-      "url": "https://remote.co/remote-jobs/virtual-assistant/"
+      "title": "AI Tools / Automation Consultant (Freelance)",
+      "type": "emerging",
+      "platform": "Upwork / Direct",
+      "estimated_salary": "£30–£80/hr",
+      "location": "Remote (Worldwide)",
+      "match": "Strong — OpenClaw, Claude, AI tools expertise",
+      "url": "https://www.upwork.com/nx/search/jobs/?q=ai+automation+consultant",
+      "date_added": "2026-02-24"
     },
     {
-      "title": "Content Moderator – Online Platforms",
-      "type": "accessible",
-      "platform": "LinkedIn",
-      "estimated_salary": "£19,000–£24,000/yr",
-      "location": "Remote (UK)",
-      "date_added": "2026-02-24",
-      "url": "https://www.linkedin.com/jobs/content-moderator/"
+      "title": "Content Creator / Video Editor (AI Niche)",
+      "type": "emerging",
+      "platform": "LinkedIn / Direct",
+      "estimated_salary": "£500–£3,000/mo",
+      "location": "Remote",
+      "match": "Good — @prompttocide YouTube channel already started",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=ai+content+creator",
+      "date_added": "2026-02-24"
     },
     {
-      "title": "Social Media Manager (SMB Clients)",
-      "type": "accessible",
-      "platform": "Indeed",
-      "estimated_salary": "£22,000–£28,000/yr",
-      "location": "Remote (UK)",
-      "date_added": "2026-02-24",
-      "url": "https://uk.indeed.com/jobs?q=remote+social+media+manager"
-    },
-    {
-      "title": "QA Tester – Web & Mobile Apps",
-      "type": "accessible",
-      "platform": "Remote.co",
-      "estimated_salary": "£24,000–£32,000/yr",
-      "location": "Remote (UK)",
-      "date_added": "2026-02-24",
-      "url": "https://remote.co/remote-jobs/qa-engineer/"
+      "title": "Customer Service / Admin (Retail Background)",
+      "type": "safety-net",
+      "platform": "Indeed UK",
+      "estimated_salary": "£11.44–£14/hr",
+      "location": "Remote / Hybrid UK",
+      "match": "Easy — current background matches",
+      "url": "https://uk.indeed.com/jobs?q=remote+customer+service&l=United+Kingdom",
+      "date_added": "2026-02-24"
     }
   ],
-  "ebay_trending": [
+  "ebay_products": [
     {
-      "product": "Retro Gaming Consoles & Accessories (SNES, N64, PS1)",
-      "category": "Video Games & Consoles",
-      "avg_sale_price": "£45–£120",
-      "competition": "low",
-      "tip": "Source from charity shops and car boot sales. Clean, boxed units fetch premium. Listings with original cables convert best.",
-      "date_added": "2026-02-24"
+      "category": "Clothing & Accessories",
+      "product": "Y2K / Vintage fashion (90s–2000s)",
+      "why": "Massively trending — Gen Z nostalgia driving huge demand",
+      "avg_sell_price": "£15–£60",
+      "source": "printful.com / printify.com (Jan 2026)",
+      "tip": "Charity shops, car boots — source cheap, photograph well",
+      "effort": "Low"
     },
     {
-      "product": "Lego Sets (Retired/Limited Edition)",
-      "category": "Toys & Games",
-      "avg_sale_price": "£30–£200",
-      "competition": "medium",
-      "tip": "Check charity shops and clearance stores. Retired sets appreciate. Incomplete sets sell for parts — list individual bags/minifigs.",
-      "date_added": "2026-02-24"
+      "category": "Tech / Gadgets",
+      "product": "Smartwatches (budget brands, used Fitbits)",
+      "why": "Consistent high demand on eBay UK — easy to describe",
+      "avg_sell_price": "£15–£80",
+      "source": "accio.com / ZIK Analytics 2026",
+      "tip": "Test before listing, describe battery life honestly",
+      "effort": "Low"
     },
     {
-      "product": "Vintage Clothing & Branded Streetwear (90s/Y2K)",
-      "category": "Clothes, Shoes & Accessories",
-      "avg_sale_price": "£15–£80",
-      "competition": "low",
-      "tip": "Nike, Adidas, Fila from charity shops. Use keywords: 'vintage', 'y2k', 'deadstock'. Flat-lay photos on clean background perform best.",
-      "date_added": "2026-02-24"
+      "category": "Gaming",
+      "product": "Retro consoles + games (PS1, N64, GameBoy)",
+      "why": "Retro gaming is evergreen and prices are rising yearly",
+      "avg_sell_price": "£20–£150",
+      "source": "ZIK Analytics Jan 2026",
+      "tip": "Bundles sell faster than singles — bundle controller + game",
+      "effort": "Medium"
     },
     {
-      "product": "Smart Home Devices (Echo, Ring, Hue – Used)",
-      "category": "Smart Home",
-      "avg_sale_price": "£20–£75",
-      "competition": "low",
-      "tip": "People upgrade frequently. Source refurbished bundles. Reset and test before listing. Bundle compatible devices for higher AOV.",
-      "date_added": "2026-02-24"
+      "category": "Home & Garden",
+      "product": "Branded kitchen tools (Tefal, KitchenAid parts)",
+      "why": "People replace parts not products — steady demand",
+      "avg_sell_price": "£10–£45",
+      "source": "packprofulfilment.co.uk (Feb 2026)",
+      "tip": "Source from clearance sections, include model number in title",
+      "effort": "Low"
     },
     {
-      "product": "AI & Prompt Engineering Books (2024–2025)",
-      "category": "Books, Comics & Magazines",
-      "avg_sale_price": "£8–£25",
-      "competition": "low",
-      "tip": "Recent AI books sell fast. Source wholesale or charity shops. Bundle 3-book lots for £30+. Niche topic, low competition.",
-      "date_added": "2026-02-24"
+      "category": "Sports & Fitness",
+      "product": "Nike / Adidas trainers (used, good condition)",
+      "why": "Nike sneakers #1 consistent eBay UK seller — huge market",
+      "avg_sell_price": "£25–£120",
+      "source": "accio.com / ZIK Analytics 2026",
+      "tip": "Clean before photos. Measure actual size. Hype styles >3x retail",
+      "effort": "Low"
+    },
+    {
+      "category": "Media / Books",
+      "product": "Box sets (DVD, Blu-ray, book series)",
+      "why": "Low competition, easy to list, decent margins",
+      "avg_sell_price": "£8–£35",
+      "source": "General eBay data",
+      "tip": "Charity shops are goldmines — 50p becomes £15",
+      "effort": "Very Low"
     }
   ],
   "fiverr_gigs": [
     {
-      "gig_title": "I will fix your WordPress website errors and speed it up",
-      "category": "Website Development",
-      "starting_price": "£25",
-      "demand": "high",
-      "tip": "Focus on '1 day delivery' as your hook. Most clients panic about broken sites. Offer 3-tier: basic fix / full audit / monthly retainer.",
-      "time_to_complete": "1–4 hours"
+      "title": "Fix WordPress Bugs & Errors",
+      "category": "WordPress",
+      "demand": "Very High",
+      "competition": "Medium",
+      "price_range": "£15–£80",
+      "why": "40% of internet runs WordPress — always breaking, always need fixing",
+      "match": "Perfect — years of WordPress experience",
+      "quick_start": "Offer: 'I'll fix any WordPress bug in 24 hours' — low price to get reviews first"
     },
     {
-      "gig_title": "I will create professional eBay listings with SEO-optimised titles",
-      "category": "eCommerce",
-      "starting_price": "£15",
-      "demand": "high",
-      "tip": "Offer bulk discounts (10 listings, 25 listings). Include photo editing tips in delivery. Upsell monthly listing management.",
-      "time_to_complete": "30–60 min per batch"
+      "title": "eBay Listing Optimisation (SEO titles, item specifics)",
+      "category": "eBay",
+      "demand": "High",
+      "competition": "Low",
+      "price_range": "£20–£150",
+      "why": "Most eBay sellers don't know Cassini SEO — huge gap",
+      "match": "Perfect — core expertise, 10+ years",
+      "quick_start": "Offer 5 listings as a starter package at £25"
     },
     {
-      "gig_title": "I will set up your AI workflow using ChatGPT or Claude",
-      "category": "AI Services",
-      "starting_price": "£30",
-      "demand": "high",
-      "tip": "Huge demand in early 2026. Target small business owners. Offer Notion + AI, email templates + AI, or social media automation.",
-      "time_to_complete": "2–5 hours"
+      "title": "Set Up OpenClaw / AI Agent Automation",
+      "category": "AI Tools",
+      "demand": "Growing Fast",
+      "competition": "Very Low",
+      "price_range": "£30–£150",
+      "why": "OpenClaw is new — almost no one on Fiverr knows it yet. First mover advantage.",
+      "match": "Perfect — run it daily, know it inside out",
+      "quick_start": "Offer setup + config + Telegram connection as a package"
     },
     {
-      "gig_title": "I will write engaging tech/AI content for your blog or website",
-      "category": "Content Writing",
-      "starting_price": "£20",
-      "demand": "medium",
-      "tip": "Leverage your AI knowledge. Offer SEO-optimised articles. Use AI to assist drafts, add your voice. 500/1000/2000 word tiers.",
-      "time_to_complete": "1–3 hours"
+      "title": "WordPress Website Speed Optimisation",
+      "category": "WordPress",
+      "demand": "High",
+      "competition": "Medium",
+      "price_range": "£25–£100",
+      "why": "Core Web Vitals are now a Google ranking factor — businesses panic over this",
+      "match": "Good — technical WordPress background",
+      "quick_start": "Use GT Metrix report as before/after proof"
     },
     {
-      "gig_title": "I will advise on basic PC or laptop repairs and upgrades remotely",
-      "category": "Tech Support",
-      "starting_price": "£10",
-      "demand": "medium",
-      "tip": "Low volume but loyal clients. Upsell to ongoing 'tech friend' retainer. Target non-techies via Google/Facebook ads targeting older demographics.",
-      "time_to_complete": "30–90 min"
+      "title": "AI Prompt Engineering & ChatGPT Setup",
+      "category": "AI Tools",
+      "demand": "High",
+      "competition": "Low-Medium",
+      "price_range": "£20–£80",
+      "why": "Businesses want AI but don't know how to prompt it properly",
+      "match": "Strong — daily AI usage across multiple tools",
+      "quick_start": "Offer custom ChatGPT system prompt + 3 use cases for £20"
     }
   ],
-  "upwork_opportunities": [
+  "upwork_jobs": [
     {
-      "title": "WordPress Maintenance & Plugin Management",
-      "skills_needed": ["WordPress", "WooCommerce", "cPanel", "FTP", "Basic PHP"],
-      "budget_range": "$15–$35/hr or $200–$600 fixed",
-      "demand": "high",
-      "tip": "Create a strong profile with before/after screenshots. Niche down to WooCommerce or blog sites. Respond to posts within 1 hour for 3x invite rate."
+      "title": "WordPress Site Maintenance & Updates",
+      "budget": "£15–£30/hr or £50–£300 fixed",
+      "frequency": "Very common — weekly postings",
+      "match": "Perfect",
+      "url": "https://www.upwork.com/nx/search/jobs/?q=wordpress+maintenance&sort=recency",
+      "tip": "Write proposal focused on speed and no-hassle communication"
     },
     {
-      "title": "eBay Store Management & Listing Optimisation",
-      "skills_needed": ["eBay Seller Hub", "Terapeak", "SEO", "Inventory Management"],
-      "budget_range": "$10–$25/hr",
-      "demand": "high",
-      "tip": "Many UK/US sellers need ongoing help. Propose a recurring contract after first project. Show understanding of eBay algorithm and cassini search."
+      "title": "eBay Store Setup & Listing Management",
+      "budget": "£10–£25/hr",
+      "frequency": "Common — multiple per week",
+      "match": "Perfect",
+      "url": "https://www.upwork.com/nx/search/jobs/?q=ebay+store+management&sort=recency",
+      "tip": "Emphasise Cassini algorithm knowledge — most clients don't even know it exists"
     },
     {
-      "title": "AI Prompt Engineer & Workflow Consultant",
-      "skills_needed": ["ChatGPT", "Claude", "Prompt Engineering", "Zapier/Make"],
-      "budget_range": "$25–$75/hr",
-      "demand": "high",
-      "tip": "One of the fastest-growing Upwork categories in 2026. Build a portfolio of 3 example workflows. Position as 'AI assistant for your business'."
+      "title": "AI Automation / OpenClaw Setup",
+      "budget": "£25–£80/hr",
+      "frequency": "Emerging — growing weekly",
+      "match": "Strong",
+      "url": "https://www.upwork.com/nx/search/jobs/?q=ai+automation+agent&sort=recency",
+      "tip": "Position as 'I run this myself daily, I'll set it up for you' — credibility boost"
     },
     {
-      "title": "Virtual Assistant – Tech-Savvy (Admin + Research)",
-      "skills_needed": ["Google Workspace", "Email Management", "Data Entry", "Basic Web Research"],
-      "budget_range": "$8–$20/hr",
-      "demand": "medium",
-      "tip": "Easy entry point to Upwork. Land first client at lower rate, get review, then raise. Many clients want long-term VAs — pitch reliability."
-    },
-    {
-      "title": "Technical Content Writer – AI, SaaS, WordPress",
-      "skills_needed": ["Content Writing", "SEO", "WordPress", "AI Tools"],
-      "budget_range": "$0.05–$0.15/word or $50–$200 fixed",
-      "demand": "medium",
-      "tip": "Your unique angle: you actually use the tools you write about. Mention @prompttocide if you have published videos — builds trust instantly."
+      "title": "WooCommerce / Shopify Store Manager",
+      "budget": "£12–£22/hr",
+      "frequency": "Very common",
+      "match": "Good — WooCommerce from WordPress background",
+      "url": "https://www.upwork.com/nx/search/jobs/?q=woocommerce+store+manager&sort=recency",
+      "tip": "Apply to ongoing contracts, not one-off tasks — recurring income"
     }
   ],
   "youtube_ideas": [
     {
-      "session_topic": "Claude vs ChatGPT – Real World Tasks Test",
-      "main_video_title": "I tested Claude and ChatGPT on 10 real tasks – Here's the winner (2026)",
-      "short_title": "ChatGPT vs Claude in 60 seconds 🤖",
-      "follow_up_title": "The BEST AI for freelancers in 2026 (full breakdown)",
-      "record_approach": "Screen record both AIs side-by-side. Give each the same 10 prompts. React on camera to surprising results. Edit: split-screen reaction format.",
-      "trend_score": 9
+      "title": "I Tested 5 AI Tools So You Don't Have To — Honest Comparison 2026",
+      "format": "Comparison / Review",
+      "effort": "Medium",
+      "potential": "High — search volume + sponsor bait",
+      "tip": "Record your actual screen. 1 session = 5 videos (one per tool)"
     },
     {
-      "session_topic": "Make Money with AI Tools – Practical UK Guide",
-      "main_video_title": "5 ways I would make money with AI tools if I started TODAY (UK, 2026)",
-      "short_title": "Make money with AI in the UK 💷",
-      "follow_up_title": "I tried making £100 with AI in a weekend – here's what happened",
-      "record_approach": "Talk-to-camera intro, then screen demos of each method. Keep energy high. Mention Fiverr + Upwork + eBay tie-ins. Easy follow-up challenge video.",
-      "trend_score": 9
+      "title": "How I Built a Full Website for 9 Cents With AI (Real Cost Breakdown)",
+      "format": "Tutorial / Reaction",
+      "effort": "Low — you already did this",
+      "potential": "High — cost-focused titles get clicks",
+      "tip": "Already have the footage — edit and post. This one is ready."
     },
     {
-      "session_topic": "OpenClaw AI Showcase & Tutorial",
-      "main_video_title": "This AI assistant runs on your own computer – OpenClaw full demo",
-      "short_title": "Your own AI on your PC? Yes. 👀",
-      "follow_up_title": "5 things I automate with OpenClaw every day",
-      "record_approach": "Screen record OpenClaw doing real tasks (research, writing, coding). Minimal cuts — authenticity sells. Follow-up can be a workflow series.",
-      "trend_score": 8
+      "title": "Setting Up OpenClaw in 10 Minutes — The FREE AI Agent for Everyone",
+      "format": "Tutorial",
+      "effort": "Low",
+      "potential": "Very High — OpenClaw searches growing, almost no tutorial content",
+      "tip": "First mover advantage — barely any videos exist on this yet"
     },
     {
-      "session_topic": "WordPress Mistakes + Fix Tutorial",
-      "main_video_title": "10 WordPress mistakes beginners make (and how to fix them fast)",
-      "short_title": "The #1 WordPress mistake people make 😬",
-      "follow_up_title": "The fastest way to speed up your WordPress site in 2026",
-      "record_approach": "Screen share your own WP instance. Show each mistake, then fix it live. Relatable commentary. Short is a clip of the most shocking stat/mistake.",
-      "trend_score": 7
+      "title": "Cursor vs Cline vs Claude Code — Which AI Coding Tool Is Actually Worth It?",
+      "format": "Comparison",
+      "effort": "Medium",
+      "potential": "Very High — massive search volume, sponsor interest",
+      "tip": "Test all 3 on the same task. Viewers love fairness."
     },
     {
-      "session_topic": "eBay Reselling Secrets – Sourcing from Charity Shops",
-      "main_video_title": "I spent £20 at charity shops and flipped it on eBay – profit reveal",
-      "short_title": "£20 → eBay profit 💰 (charity shop flip)",
-      "follow_up_title": "What to look for at charity shops to resell on eBay (complete guide)",
-      "record_approach": "Film the charity shop trip (phone), then screen record eBay listings, then reveal profit. Three-act structure. Satisfying and repeatable as a series.",
-      "trend_score": 8
+      "title": "I Let AI Run My Day for 24 Hours — Here's What Happened",
+      "format": "Vlog / Experiment",
+      "effort": "Low — just document what you already do",
+      "potential": "High — novelty factor, shareable",
+      "tip": "Record your OpenClaw sessions. Narrate with voiceover. No fancy editing needed."
+    },
+    {
+      "title": "How to Start Freelancing With AI Skills in 2026 (No Experience Needed)",
+      "format": "Tutorial / Motivational",
+      "effort": "Low",
+      "potential": "High — high-intent searches from beginners",
+      "tip": "Cover Fiverr + Upwork + direct outreach. Your journey = the story."
     }
   ]
 }
